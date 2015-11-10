@@ -29,7 +29,7 @@ This is a work in progress. We are actively seeking implementations and feedback
   {: .names}
 
 
-_Copyright © 2015 Editors and contributors. Published by the IIIF under the [CC-BY][cc-by] license._
+_Copyright © 2015 Editors and contributors. Published by the IIIF Consortium under the [CC-BY][cc-by] license._
 
 
 ## Table of Contents
@@ -40,9 +40,9 @@ _Copyright © 2015 Editors and contributors. Published by the IIIF under the [CC
 
 ## 1. Introduction
 
-In the IIIF [Presentation API][prezi-api], content is brought together from distributed systems via annotations.  That content might be images, often with a IIIF [Image API][image-api] service to access them, audio, video, rich or plain text, or anything else.  In a vibrant and dynamic system, that content can come from many sources and be rich, varied and abundant.  Of that list, textual content lends itself to being searched, either as the transcription, translation or edition of the intellectual content, or commentary, description, tagging or other annotations about the resource.  
+In the IIIF [Presentation API][prezi-api], content is brought together from distributed systems via annotations.  That content might include images, often with a IIIF [Image API][image-api] service to access them, audio, video, rich or plain text, or anything else.  In a vibrant and dynamic system, that content can come from many sources and be rich, varied and abundant.  Of that list of content types, textual resources lend themselves to being searched, either as the transcription, translation or edition of the intellectual content, or commentary, description, tagging or other annotations about the object.  
 
-This specification lays out the interoperability mechanism for performing these searches within the IIIF context.  The scope of the specification is searching textual annotation content within a single IIIF resource, such as a Manifest or Range.  Every effort is made to keep the interaction as consistent with existing IIIF patterns as possible.
+This specification lays out the interoperability mechanism for performing these searches within the IIIF context.  The scope of the specification is searching textual annotation content within a single IIIF resource, such as a Manifest or Range.  Every effort is made to keep the interaction as consistent with existing IIIF patterns as possible.  Searching for metadata or other descriptive properties is not in scope for this work.
 
 In order to make searches easier against unknown content, a related service for the auto-completion of search terms is also specified. The auto-complete service is specific to a search service to ensure that the retrieved terms can simply be copied to the query of the search.
 
@@ -69,13 +69,11 @@ The key words _MUST_, _MUST NOT_, _REQUIRED_, _SHALL_, _SHALL NOT_, _SHOULD_, _S
 
 The IIIF Presentation API provides just enough information to a viewer so that it can present the images and other content to the user in a rich and understandable way.  Those content resources may have textual annotations associated with them.  Annotations may also be associated with the structural components of the Presentation API, such as the manifest itself, sequences, ranges, and layers.  Further, annotations can be replied to by annotating them to form a threaded discussion about the commentary, transcription, edition or translation.
 
-Annotations are typically made available to viewing applications in an Annotation List, where all of the annotations in the list target the same resource, or part of it.  Where known, these lists can be directly referenced from the manifest document to allow clients to simply follow the link to retrieve them.  For fixed, curated content, this is an appropriate method to discover them, as the annotations do not frequently change, nor are they potentially distributed amongst multiple servers.
+Annotations are typically made available to viewing applications in an Annotation List, where all of the annotations in the list target the same resource, or part of it.  Where known, these lists can be directly referenced from the manifest document to allow clients to simply follow the link to retrieve them.  For fixed, curated content, this is an appropriate method to discover them, as the annotations do not frequently change, nor are they potentially distributed amongst multiple servers.  Annotation Lists can be included in Layers to group them together, such as by the source of the Annotations, to allow the user to manipulate that grouping as a whole.
 
-However this is less useful for comment-style annotations, crowd-sourced or distributed transcriptions, corrections to automated OCR transcription, and similar, as the annotations may be in constant flux.  Further, being able to quickly discover individual annotations without stepping through all of the views of an object is essential for a reasonable user experience.  
+However this is less useful for comment-style annotations, crowd-sourced or distributed transcriptions, corrections to automated OCR transcription, and similar, as the annotations may be in constant flux.  Further, being able to quickly discover individual annotations without stepping through all of the views of an object is essential for a reasonable user experience.  This specification adds this capability to the IIIF suite of specifications.  
 
 Beyond the ability to search for words or phrases, users find it helpful to have suggestions for what terms they should be searching for.  This facility is often called auto-complete or type-ahead, and within the context of a single object can provide insight into the language and content.  The auto-complete service is associated with a search service into which the terms can be fed as part of a query.
-
-This specification details how, within the context of IIIF, search and auto-complete services should be implemented such that they are easy and consistent to interact with from viewing applications.
 
 ## 3. Search
 
