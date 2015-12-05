@@ -126,6 +126,8 @@ Common values for the motivation parameter are:
 | `commenting`   | Annotations with the `oa:commenting` motivation |
 | `describing`   | Annotations with the `oa:describing` motivation |
 | `tagging`      | Annotations with the `oa:tagging` motivation |
+| `linking`      | Annotations with the `oa:linking` motivation |
+
 {: .api-table}
 
 Other motivations are possible, and the full list from the [Open Annotation][openanno] specification _SHOULD_ be available by dropping the "oa:" prefix.  Other, community specific motivations _SHOULD_ include a prefix or use their full URI.
