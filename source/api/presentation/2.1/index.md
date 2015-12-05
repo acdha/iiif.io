@@ -319,8 +319,27 @@ startCanvas
     * A sequence or a range _MAY_ have exactly one canvas as its start canvas.
     * Other resources _MUST NOT_ have a start canvas.
 
-The requirements for the metadata properties are summarized in [Appendix B][appendixB].
+####  3.5. Paging Properties
 
+first
+:  
+
+last
+:
+
+next
+:
+
+prev
+:
+
+total
+:
+
+
+
+
+The requirements for the metadata properties are summarized in [Appendix B][appendixB].
 
 Other properties are possible, either via custom extensions or endorsed by the IIIF. If a client discovers properties that it does not understand, then it _MUST_ ignore them.  Other properties _SHOULD_ consist of a prefix and a name in the form "`prefix:name`" to ensure it does not collide with a property defined by IIIF specifications.  [Services][annex] _SHOULD_ be used for extensions if at all possible.
 
