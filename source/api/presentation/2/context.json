@@ -20,10 +20,11 @@
 
 	        "license":     {"@type":"@id", "@id":"dcterms:license"},
 	        "service":     {"@type":"@id", "@id":"svcs:has_service"},
-	        "seeAlso":    {"@type":"@id", "@id":"foaf:page"},
+	        "seeAlso":     {"@type":"@id", "@id":"foaf:page"},
 	        "within":      {"@type":"@id", "@id":"dcterms:isPartOf"},
 	        "profile":     {"@type":"@id", "@id":"dcterms:conformsTo"},
 	        "related":     {"@type":"@id", "@id":"dcterms:relation"},
+	        "rendering":   {"@type":"@id", "@id":"dcterms:hasFormat"},
 	        "logo":        {"@type":"@id", "@id":"foaf:logo"},
 	        "thumbnail":   {"@type":"@id", "@id":"foaf:thumbnail"},
 	        "startCanvas": {"@type":"@id", "@id":"sc:hasStartCanvas"},
@@ -42,6 +43,7 @@
 	        "description": {"@id": "dc:description"},
 	        "height":      {"@type":"xsd:integer", "@id":"exif:height"},
 	        "width":       {"@type":"xsd:integer", "@id":"exif:width"},
+	        "navDate":     {"@id": "dc:date"},
 
 	        "attribution": {"@id": "sc:attributionLabel"},
 	        "viewingDirection": {"@id": "sc:viewingDirection", "@type":"@id"},
