@@ -7,7 +7,7 @@ tags: [specifications, presentation-api]
 major: 2
 minor: 1
 patch: 0
-pre: draft3
+pre: draft4
 ---
 
 ## Status of this Document
@@ -18,9 +18,7 @@ __Latest Stable Version:__ [{{ site.presentation_api.latest.major }}.{{ site.pre
 
 __Previous Version:__ [2.0][prev-version]
 
-__Beta Specification for Trial Use__
-This is a work in progress. We are actively seeking new implementations, updates to existing implementations, and feedback. No section should be considered final, and the absence of any content does not imply that such content is out of scope, or may not appear in the future.  Please send any feedback to [iiif-discuss@googlegroups.com][iiif-discuss].
-{: .alert}
+{% include beta.md %}
 
 **Editors**
 
@@ -1329,9 +1327,9 @@ The paged resource _MAY_ use the `total` property to list the total number of le
 
 The page resources _MAY_ have different properties from the paged resource, including different rights and descriptive properties.  Clients _MUST_ take into account any requirements derived from these properties, such as displaying `logo` or `attribution`.
 
-#### 7.4.1. Paged Layers
+#### 7.4.1. Example Paged Layer
 
-A layer representing a long transcription with almost half a million annotations:
+A layer representing a long transcription with almost half a million annotations, perhaps where each annotation paints a single word on the canvas:
 
 {% highlight json %}
 {
@@ -1364,7 +1362,7 @@ And the corresponding first annotation list:
 {% endhighlight %}
 
 
-#### 7.4.2. Paged Collections
+#### 7.4.2. Example Paged Collection
 
 An example large collection with some 9.3 million objects in it:
 
@@ -1402,6 +1400,7 @@ And the corresponding first page of manifests:
 ## 8. Authentication
 
 It may be necessary to restrict access to the descriptions made available via the Presentation API.  As the primary means of interaction with the descriptions is by web browsers using XmlHttpRequests across domains, there are some considerations regarding the most appropriate methods for authenticating users and authorizing their access.  The approach taken is described in the [Authentication][auth] specification, and requires requesting a token to add to the requests to identify the user.  This token might also be used for other requests defined by other APIs.
+
 
 ## 9. Complete Example Response
 
