@@ -16,6 +16,7 @@
 	        "rdfs":    "http://www.w3.org/2000/01/rdf-schema#",
 	        "xsd":     "http://www.w3.org/2001/XMLSchema#",
 			"svcs":    "http://rdfs.org/sioc/services#",
+			"as":      "http://www.w3.org/ns/activitystreams#",
 
 	        "license":     {"@type":"@id", "@id":"dcterms:license"},
 	        "service":     {"@type":"@id", "@id":"svcs:has_service"},
@@ -36,7 +37,6 @@
 	        "otherContent": {"@type":"@id", "@id":"sc:hasLists", "@container":"@list"},
 	        "structures":  {"@type":"@id", "@id":"sc:hasRanges", "@container":"@list"},
 	        "ranges" :     {"@type": "@id", "@id": "sc:hasRanges", "@container":"@list"},
-
 	        "metadata":    {"@type":"@id", "@id":"sc:metadataLabels", "@container":"@list"},
 
 	        "description": {"@id": "dc:description"},
@@ -47,16 +47,18 @@
 	        "viewingDirection": {"@id": "sc:viewingDirection", "@type":"@id"},
 	        "viewingHint": {"@id": "sc:viewingHint", "@type":"@id"},
 
-	        "left-to-right": {"@id":"sc:leftToRightDirection", "@type":"sc:ViewingDirection"},
-	        "right-to-left": {"@id":"sc:rightToLeftDirection", "@type":"sc:ViewingDirection"},
-	        "top-to-bottom": {"@id":"sc:topToBottomDirection", "@type":"sc:ViewingDirection"},	        
-	        "bottom-to-top": {"@id":"sc:bottomToTopDirection", "@type":"sc:ViewingDirection"},
+	        "left-to-right": {"@vocab":"sc:leftToRightDirection", "@type":"sc:ViewingDirection"},
+	        "right-to-left": {"@vocab":"sc:rightToLeftDirection", "@type":"sc:ViewingDirection"},
+	        "top-to-bottom": {"@vocab":"sc:topToBottomDirection", "@type":"sc:ViewingDirection"},	        
+	        "bottom-to-top": {"@vocab":"sc:bottomToTopDirection", "@type":"sc:ViewingDirection"},
 
-	        "paged":         {"@id":"sc:pagedHint", "@type":"sc:ViewingHint"},
-	        "non-paged":     {"@id":"sc:nonPagedHint", "@type":"sc:ViewingHint"},   
-	        "continuous":    {"@id":"sc:continuousHint", "@type":"sc:ViewingHint"},
-	        "individuals":   {"@id":"sc:individualsHint", "@type":"sc:ViewingHint"}, 
-	        "top":           {"@id":"sc:topHint", "@type":"sc:ViewingHint"},
+	        "paged":         {"@vocab":"sc:pagedHint", "@type":"sc:ViewingHint"},
+	        "non-paged":     {"@vocab":"sc:nonPagedHint", "@type":"sc:ViewingHint"},   
+	        "continuous":    {"@vocab":"sc:continuousHint", "@type":"sc:ViewingHint"},
+	        "individuals":   {"@vocab":"sc:individualsHint", "@type":"sc:ViewingHint"}, 
+	        "top":           {"@vocab":"sc:topHint", "@type":"sc:ViewingHint"},
+	        "multi-part":    {"@vocab":"sc:multiPartHint", "@type":"sc:ViewingHint"},
+	        "facing-pages":  {"@vocab":"sc:facingPagesHint", "@type":"sc:ViewingHint"},
 
 	        "motivation":  {"@type":"@id", "@id":"oa:motivatedBy"},
 	        "resource":    {"@type":"@id", "@id":"oa:hasBody"},
@@ -74,7 +76,14 @@
 		    "format":      {"@id": "dc:format"},
 		    "language":    {"@id": "dc:language"},
 		    "value":       {"@id": "rdf:value"},
-		    "label":       {"@id": "rdfs:label"}
+		    "label":       {"@id": "rdfs:label"},
+
+		    "first":	   {"@type":"@id", "@id": "as:first"},
+		    "last":	  	   {"@type":"@id", "@id": "as:last"},
+		    "next":	   	   {"@type":"@id", "@id": "as:next"},		    
+		    "prev":	   	   {"@type":"@id", "@id": "as:prev"},
+		    "total":	   {"@id": "as:totalItems"},
+		    "startIndex":  {"@id": "as:startIndex"}
 		}
 	]
 }
