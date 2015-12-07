@@ -10,7 +10,7 @@
 	"count": {"@id": "search:count"},
 
 	"hits": {"@id": "search:hasHitList", "@container": "@list", "@type": "@id"},
-	"terms": {"@id": "search:hasTermList", "@container": "@list", "@type":, "@id"},
+	"terms": {"@id": "search:hasTermList", "@container": "@list", "@type": "@id"},
 	"annotations": {"@id": "search:refines", "@container": "@set", "@type": "@id"},
 	"selectors": {"@id": "search:hasSelector", "@container": "@set", "@type":"@id"}
 
